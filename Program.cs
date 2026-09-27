@@ -1,3 +1,4 @@
+using Farmacia.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
@@ -21,11 +22,9 @@ app.MapGet("/",()=>
     return "API Farmacia funcionando";
 });
 
-app.MapGet("/api/farmacia", ()=>
-{
-    return Results.Ok(new[]
+var productos = new List<Producto>
     {
-        new {
+        new Producto {
             id=1,
             codigo="MED001",
             nombre="Paracetamol",
@@ -41,7 +40,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Paracetamol_acetaminophen_500_mg_pills.jpg",
             descripcion="Analgésico y antipirético utilizado para aliviar el dolor y reducir la fiebre."
         },
-        new {
+        new Producto {
             id=2,
             codigo="MED002",
             nombre="Ibuprofeno",
@@ -57,7 +56,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/200mg_ibuprofen_tablets.jpg",
             descripcion="Antiinflamatorio no esteroideo utilizado para aliviar dolor, inflamación y fiebre."
         },
-        new {
+        new Producto {
             id=3,
             codigo="MED003",
             nombre="Naproxeno",
@@ -73,7 +72,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Naproxen_500_mg_tablets.jpg",
             descripcion="Antiinflamatorio utilizado para aliviar dolor e inflamación."
         },
-        new {
+        new Producto {
             id=4,
             codigo="MED004",
             nombre="Diclofenaco",
@@ -89,7 +88,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Diclofenac_50mg_tablets.jpg",
             descripcion="Antiinflamatorio utilizado para disminuir el dolor y la inflamación."
         },
-        new {
+        new Producto {
             id=5,
             codigo="MED005",
             nombre="Ketorolaco",
@@ -105,7 +104,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ketorolac_tablets.jpg",
             descripcion="Analgésico antiinflamatorio utilizado para el manejo del dolor."
         },
-        new {
+        new Producto {
             id=6,
             codigo="MED006",
             nombre="Amoxicilina",
@@ -121,7 +120,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Amoxicillin_500mg_capsules_on_a_plate_(Sandoz).jpg",
             descripcion="Antibiótico del grupo de las penicilinas utilizado para determinadas infecciones bacterianas."
         },
-        new {
+        new Producto {
             id=7,
             codigo="MED007",
             nombre="Azitromicina",
@@ -137,7 +136,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Azithromycin_tablets.jpg",
             descripcion="Antibiótico macrólido utilizado para determinadas infecciones bacterianas."
         },
-        new {
+        new Producto {
             id=8,
             codigo="MED008",
             nombre="Ciprofloxacino",
@@ -153,7 +152,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ciprofloxacin_tablets.jpg",
             descripcion="Antibiótico fluoroquinolona utilizado para determinadas infecciones bacterianas."
         },
-        new {
+        new Producto {
             id=9,
             codigo="MED009",
             nombre="Cefalexina",
@@ -169,7 +168,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cephalexin_capsules.jpg",
             descripcion="Antibiótico cefalosporínico utilizado para determinadas infecciones bacterianas."
         },
-        new {
+        new Producto {
             id=10,
             codigo="MED010",
             nombre="Claritromicina",
@@ -186,7 +185,7 @@ app.MapGet("/api/farmacia", ()=>
             descripcion="Antibiótico macrólido empleado para determinadas infecciones bacterianas."
         },
 
-        new {
+        new Producto {
             id=11,
             codigo="MED011",
             nombre="Loratadina",
@@ -202,7 +201,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Loratadine_tablets.jpg",
             descripcion="Antihistamínico utilizado para aliviar síntomas de alergia."
         },
-        new {
+        new Producto {
             id=12,
             codigo="MED012",
             nombre="Cetirizina",
@@ -218,7 +217,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cetirizine_10mg_tablets.jpg",
             descripcion="Antihistamínico empleado para aliviar diferentes síntomas de alergia."
         },
-        new {
+        new Producto {
             id=13,
             codigo="MED013",
             nombre="Fexofenadina",
@@ -234,7 +233,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fexofenadine_tablets.jpg",
             descripcion="Antihistamínico utilizado para tratar síntomas asociados con alergias."
         },
-        new {
+        new Producto {
             id=14,
             codigo="MED014",
             nombre="Omeprazol",
@@ -250,7 +249,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Omeprazol_Activis_capsules.jpg",
             descripcion="Inhibidor de la bomba de protones que disminuye la producción de ácido gástrico."
         },
-        new {
+        new Producto {
             id=15,
             codigo="MED015",
             nombre="Pantoprazol",
@@ -266,7 +265,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pantoprazole_tablets.jpg",
             descripcion="Medicamento utilizado para disminuir la producción de ácido gástrico."
         },
-        new {
+        new Producto {
             id=16,
             codigo="MED016",
             nombre="Esomeprazol",
@@ -282,7 +281,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Esomeprazole_capsules.jpg",
             descripcion="Medicamento utilizado para reducir la producción de ácido del estómago."
         },
-        new {
+        new Producto {
             id=17,
             codigo="MED017",
             nombre="Metoclopramida",
@@ -298,7 +297,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Metoclopramide_tablets.jpg",
             descripcion="Medicamento utilizado para determinadas situaciones de náuseas y vómitos."
         },
-        new {
+        new Producto {
             id=18,
             codigo="MED018",
             nombre="Ondansetrón",
@@ -314,7 +313,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ondansetron_tablets.jpg",
             descripcion="Antiemético utilizado para prevenir o controlar náuseas y vómitos."
         },
-        new {
+        new Producto {
             id=19,
             codigo="MED019",
             nombre="Loperamida",
@@ -330,7 +329,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Loperamide_capsules.jpg",
             descripcion="Medicamento utilizado para el control sintomático de determinados cuadros de diarrea."
         },
-        new {
+        new Producto {
             id=20,
             codigo="MED020",
             nombre="Simeticona",
@@ -347,7 +346,7 @@ app.MapGet("/api/farmacia", ()=>
             descripcion="Medicamento empleado para aliviar molestias relacionadas con gases intestinales."
         },
 
-        new {
+        new Producto {
             id=21,
             codigo="MED021",
             nombre="Losartán",
@@ -363,7 +362,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Losartan_tablets.jpg",
             descripcion="Antihipertensivo utilizado para controlar la presión arterial."
         },
-        new {
+        new Producto {
             id=22,
             codigo="MED022",
             nombre="Enalapril",
@@ -379,7 +378,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Enalapril_tablets.jpg",
             descripcion="Medicamento utilizado para el tratamiento de la hipertensión arterial."
         },
-        new {
+        new Producto {
             id=23,
             codigo="MED023",
             nombre="Amlodipino",
@@ -395,7 +394,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Amlodipine_tablets.jpg",
             descripcion="Bloqueador de canales de calcio utilizado para controlar la presión arterial."
         },
-        new {
+        new Producto {
             id=24,
             codigo="MED024",
             nombre="Atenolol",
@@ -411,7 +410,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Atenolol_tablets.jpg",
             descripcion="Betabloqueador utilizado para determinadas enfermedades cardiovasculares."
         },
-        new {
+        new Producto {
             id=25,
             codigo="MED025",
             nombre="Carvedilol",
@@ -427,7 +426,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Carvedilol_tablets.jpg",
             descripcion="Medicamento cardiovascular utilizado para determinadas afecciones cardíacas."
         },
-        new {
+        new Producto {
             id=26,
             codigo="MED026",
             nombre="Atorvastatina",
@@ -443,7 +442,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Atorvastatin_20mg_tablets.jpg",
             descripcion="Estatina utilizada para ayudar a controlar determinados niveles de colesterol."
         },
-        new {
+        new Producto {
             id=27,
             codigo="MED027",
             nombre="Rosuvastatina",
@@ -459,7 +458,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Rosuvastatin_tablets.jpg",
             descripcion="Medicamento empleado para controlar determinados niveles elevados de colesterol."
         },
-        new {
+        new Producto {
             id=28,
             codigo="MED028",
             nombre="Metformina",
@@ -475,7 +474,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Metformin_500mg_tablets.jpg",
             descripcion="Antidiabético oral utilizado en el manejo de la diabetes mellitus tipo 2."
         },
-        new {
+        new Producto {
             id=29,
             codigo="MED029",
             nombre="Glibenclamida",
@@ -491,7 +490,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Glibenclamide_tablets.jpg",
             descripcion="Antidiabético oral utilizado para ayudar a controlar la glucemia."
         },
-        new {
+        new Producto {
             id=30,
             codigo="MED030",
             nombre="Sitagliptina",
@@ -508,7 +507,7 @@ app.MapGet("/api/farmacia", ()=>
             descripcion="Medicamento utilizado en determinados pacientes con diabetes mellitus tipo 2."
         },
 
-        new {
+        new Producto {
             id=31,
             codigo="MED031",
             nombre="Salbutamol",
@@ -524,7 +523,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Salbutamol_inhaler.jpg",
             descripcion="Broncodilatador inhalado utilizado para aliviar determinados episodios de broncoespasmo."
         },
-        new {
+        new Producto {
             id=32,
             codigo="MED032",
             nombre="Budesonida",
@@ -540,7 +539,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Budesonide_inhaler.jpg",
             descripcion="Corticosteroide inhalado utilizado para controlar la inflamación de las vías respiratorias."
         },
-        new {
+        new Producto {
             id=33,
             codigo="MED033",
             nombre="Ambroxol",
@@ -556,7 +555,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ambroxol.jpg",
             descripcion="Mucolítico utilizado para facilitar la eliminación de secreciones respiratorias."
         },
-        new {
+        new Producto {
             id=34,
             codigo="MED034",
             nombre="Acetilcisteína",
@@ -572,7 +571,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Acetylcysteine.jpg",
             descripcion="Mucolítico utilizado para disminuir la viscosidad de las secreciones respiratorias."
         },
-        new {
+        new Producto {
             id=35,
             codigo="MED035",
             nombre="Dextrometorfano",
@@ -588,7 +587,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dextromethorphan.jpg",
             descripcion="Antitusivo utilizado para aliviar determinados cuadros de tos seca."
         },
-        new {
+        new Producto {
             id=36,
             codigo="MED036",
             nombre="Clotrimazol",
@@ -604,7 +603,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Clotrimazole_cream.jpg",
             descripcion="Antifúngico tópico utilizado para determinadas infecciones causadas por hongos."
         },
-        new {
+        new Producto {
             id=37,
             codigo="MED037",
             nombre="Fluconazol",
@@ -620,7 +619,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fluconazole_capsules.jpg",
             descripcion="Antifúngico sistémico utilizado para determinadas infecciones por hongos."
         },
-        new {
+        new Producto {
             id=38,
             codigo="MED038",
             nombre="Terbinafina",
@@ -636,7 +635,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Terbinafine_cream.jpg",
             descripcion="Antifúngico tópico utilizado en determinadas infecciones de la piel."
         },
-        new {
+        new Producto {
             id=39,
             codigo="MED039",
             nombre="Aciclovir",
@@ -652,7 +651,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Aciclovir_tablets.jpg",
             descripcion="Antiviral utilizado para determinadas infecciones producidas por herpesvirus."
         },
-        new {
+        new Producto {
             id=40,
             codigo="MED040",
             nombre="Hidrocortisona",
@@ -669,7 +668,7 @@ app.MapGet("/api/farmacia", ()=>
             descripcion="Corticosteroide tópico utilizado para disminuir determinadas reacciones inflamatorias."
         },
 
-        new {
+        new Producto {
             id=41,
             codigo="MED041",
             nombre="Prednisona",
@@ -685,7 +684,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Prednisone_tablets.jpg",
             descripcion="Corticosteroide sistémico utilizado en diferentes procesos inflamatorios."
         },
-        new {
+        new Producto {
             id=42,
             codigo="MED042",
             nombre="Dexametasona",
@@ -701,7 +700,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dexamethasone_tablets.jpg",
             descripcion="Corticosteroide utilizado para determinadas afecciones inflamatorias."
         },
-        new {
+        new Producto {
             id=43,
             codigo="MED043",
             nombre="Levotiroxina",
@@ -717,7 +716,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Levothyroxine_tablets.jpg",
             descripcion="Hormona tiroidea sintética utilizada en el tratamiento del hipotiroidismo."
         },
-        new {
+        new Producto {
             id=44,
             codigo="MED044",
             nombre="Ácido fólico",
@@ -733,7 +732,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Folic_acid_tablets.jpg",
             descripcion="Vitamina B9 utilizada como suplemento nutricional."
         },
-        new {
+        new Producto {
             id=45,
             codigo="MED045",
             nombre="Vitamina C",
@@ -749,7 +748,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Vitamin_C_tablets.jpg",
             descripcion="Suplemento utilizado como fuente de vitamina C."
         },
-        new {
+        new Producto {
             id=46,
             codigo="MED046",
             nombre="Vitamina D3",
@@ -765,7 +764,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Vitamin_D3_capsules.jpg",
             descripcion="Suplemento utilizado como fuente adicional de vitamina D3."
         },
-        new {
+        new Producto {
             id=47,
             codigo="MED047",
             nombre="Complejo B",
@@ -781,7 +780,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Vitamin_B_complex_tablets.jpg",
             descripcion="Suplemento que contiene diferentes vitaminas pertenecientes al complejo B."
         },
-        new {
+        new Producto {
             id=48,
             codigo="MED048",
             nombre="Sulfato ferroso",
@@ -797,7 +796,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrous_sulfate_tablets.jpg",
             descripcion="Suplemento de hierro utilizado para determinadas deficiencias de hierro."
         },
-        new {
+        new Producto {
             id=49,
             codigo="MED049",
             nombre="Carbonato de calcio",
@@ -813,7 +812,7 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Calcium_carbonate_tablets.jpg",
             descripcion="Suplemento utilizado como fuente adicional de calcio."
         },
-        new {
+        new Producto {
             id=50,
             codigo="MED050",
             nombre="Magnesio",
@@ -829,7 +828,68 @@ app.MapGet("/api/farmacia", ()=>
             imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Magnesium_oxide_tablets.jpg",
             descripcion="Suplemento mineral utilizado como fuente adicional de magnesio."
         }
-    });
+    };
+
+app.MapGet("/api/farmacia", () =>
+{
+    return Results.Ok(productos);
+});
+
+app.MapGet("/api/farmacia/{id}", (int id) =>
+{
+    var producto = productos.FirstOrDefault(p => p.id == id);
+
+    if (producto == null)
+        return Results.NotFound();
+
+    return Results.Ok(producto);
+});
+
+app.MapPost("/api/farmacia", (Producto producto) =>
+{
+    producto.id = productos.Count == 0
+        ? 1
+        : productos.Max(p => p.id) + 1;
+
+    productos.Add(producto);
+
+    return Results.Created($"/api/farmacia/{producto.id}", producto);
+});
+
+app.MapPut("/api/farmacia/{id}", (int id, Producto actualizado) =>
+{
+    var producto = productos.FirstOrDefault(p => p.id == id);
+
+    if (producto == null)
+        return Results.NotFound();
+
+    producto.codigo = actualizado.codigo;
+    producto.nombre = actualizado.nombre;
+    producto.categoria = actualizado.categoria;
+    producto.principioActivo = actualizado.principioActivo;
+    producto.concentracion = actualizado.concentracion;
+    producto.presentacion = actualizado.presentacion;
+    producto.laboratorio = actualizado.laboratorio;
+    producto.precio = actualizado.precio;
+    producto.stock = actualizado.stock;
+    producto.fechaVencimiento = actualizado.fechaVencimiento;
+    producto.descuento = actualizado.descuento;
+    producto.imagen = actualizado.imagen;
+    producto.descripcion = actualizado.descripcion;
+
+    return Results.Ok(producto);
+});
+
+app.MapDelete("/api/farmacia/{id}", (int id) =>
+{
+    var producto = productos.FirstOrDefault(p => p.id == id);
+
+    if (producto == null)
+        return Results.NotFound();
+
+    productos.Remove(producto);
+
+    return Results.NoContent();
 });
 
 var port = Environment.GetEnvironmentVariable("Port")??"10000";
