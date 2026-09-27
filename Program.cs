@@ -21,7 +21,7 @@ app.MapGet("/",()=>
     return "API Farmacia funcionando";
 });
 
-var productos = new List<dynamic>
+app.MapGet("/api/farmacia", ()=>
 {
     return Results.Ok(new[]
     {
