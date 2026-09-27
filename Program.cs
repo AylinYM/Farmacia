@@ -69,7 +69,7 @@ var productos = new List<Producto>
             stock=70,
             fechaVencimiento="2028-08-20",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Naproxen_500_mg_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Naproxen.JPG",
             descripcion="Antiinflamatorio utilizado para aliviar dolor e inflamación."
         },
         new Producto {
@@ -85,7 +85,7 @@ var productos = new List<Producto>
             stock=85,
             fechaVencimiento="2028-03-12",
             descuento=0,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Diclofenac_50mg_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Diclofenac_Natrium_50mg_Aurobindo.jpg",
             descripcion="Antiinflamatorio utilizado para disminuir el dolor y la inflamación."
         },
         new Producto {
@@ -101,7 +101,7 @@ var productos = new List<Producto>
             stock=60,
             fechaVencimiento="2028-11-10",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ketorolac_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ketorolac.png",
             descripcion="Analgésico antiinflamatorio utilizado para el manejo del dolor."
         },
         new Producto {
@@ -133,7 +133,7 @@ var productos = new List<Producto>
             stock=45,
             fechaVencimiento="2028-09-25",
             descuento=8,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Azithromycin_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Zithromax_(Azithromycin)_tablets.jpg",
             descripcion="Antibiótico macrólido utilizado para determinadas infecciones bacterianas."
         },
         new Producto {
@@ -149,7 +149,7 @@ var productos = new List<Producto>
             stock=40,
             fechaVencimiento="2028-04-14",
             descuento=0,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ciprofloxacin_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ciprofloxacin.jpg",
             descripcion="Antibiótico fluoroquinolona utilizado para determinadas infecciones bacterianas."
         },
         new Producto {
@@ -181,7 +181,7 @@ var productos = new List<Producto>
             stock=35,
             fechaVencimiento="2028-12-20",
             descuento=10,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Clarithromycin_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Clarithromycin_caplets.jpg",
             descripcion="Antibiótico macrólido empleado para determinadas infecciones bacterianas."
         },
 
@@ -198,7 +198,7 @@ var productos = new List<Producto>
             stock=100,
             fechaVencimiento="2029-01-15",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Loratadine_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Comprimidos_de_Loratadina.jpg",
             descripcion="Antihistamínico utilizado para aliviar síntomas de alergia."
         },
         new Producto {
@@ -214,7 +214,7 @@ var productos = new List<Producto>
             stock=90,
             fechaVencimiento="2028-06-30",
             descuento=0,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cetirizine_10mg_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cetirizine_tablets_under_the_brand_name_«Зодак».jpg",
             descripcion="Antihistamínico empleado para aliviar diferentes síntomas de alergia."
         },
         new Producto {
@@ -230,7 +230,7 @@ var productos = new List<Producto>
             stock=40,
             fechaVencimiento="2028-09-18",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fexofenadine_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fexofenadine.svg",
             descripcion="Antihistamínico utilizado para tratar síntomas asociados con alergias."
         },
         new Producto {
@@ -262,7 +262,7 @@ var productos = new List<Producto>
             stock=65,
             fechaVencimiento="2028-10-12",
             descuento=10,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pantoprazole_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pantoprazole_20mg.jpg",
             descripcion="Medicamento utilizado para disminuir la producción de ácido gástrico."
         },
         new Producto {
@@ -278,7 +278,7 @@ var productos = new List<Producto>
             stock=45,
             fechaVencimiento="2029-02-15",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Esomeprazole_capsules.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Esomeprazole.jpg",
             descripcion="Medicamento utilizado para reducir la producción de ácido del estómago."
         },
         new Producto {
@@ -294,7 +294,7 @@ var productos = new List<Producto>
             stock=70,
             fechaVencimiento="2028-08-05",
             descuento=0,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Metoclopramide_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Maxolon,_Metoclopramide_Hydrochloride_Anhydrous_10MG_Tablet,_Box,_Tablet_Sheet.jpg",
             descripcion="Medicamento utilizado para determinadas situaciones de náuseas y vómitos."
         },
         new Producto {
@@ -310,7 +310,7 @@ var productos = new List<Producto>
             stock=30,
             fechaVencimiento="2028-11-30",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ondansetron_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tabletas.jpg",
             descripcion="Antiemético utilizado para prevenir o controlar náuseas y vómitos."
         },
         new Producto {
@@ -326,7 +326,7 @@ var productos = new List<Producto>
             stock=80,
             fechaVencimiento="2028-05-19",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Loperamide_capsules.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Loperamide.svg",
             descripcion="Medicamento utilizado para el control sintomático de determinados cuadros de diarrea."
         },
         new Producto {
@@ -342,7 +342,7 @@ var productos = new List<Producto>
             stock=75,
             fechaVencimiento="2028-09-09",
             descuento=0,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Simethicone_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Simethiconetablets.jpg",
             descripcion="Medicamento empleado para aliviar molestias relacionadas con gases intestinales."
         },
 
@@ -359,7 +359,7 @@ var productos = new List<Producto>
             stock=85,
             fechaVencimiento="2028-12-10",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Losartan_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Losartan_potassium1.jpg",
             descripcion="Antihipertensivo utilizado para controlar la presión arterial."
         },
         new Producto {
@@ -375,7 +375,7 @@ var productos = new List<Producto>
             stock=90,
             fechaVencimiento="2028-10-20",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Enalapril_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Enalapril.png",
             descripcion="Medicamento utilizado para el tratamiento de la hipertensión arterial."
         },
         new Producto {
@@ -391,7 +391,7 @@ var productos = new List<Producto>
             stock=75,
             fechaVencimiento="2029-01-10",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Amlodipine_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Amlodipine.svg",
             descripcion="Bloqueador de canales de calcio utilizado para controlar la presión arterial."
         },
         new Producto {
@@ -407,7 +407,7 @@ var productos = new List<Producto>
             stock=55,
             fechaVencimiento="2028-08-17",
             descuento=0,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Atenolol_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Atenolol_tablets_(UK).jpg",
             descripcion="Betabloqueador utilizado para determinadas enfermedades cardiovasculares."
         },
         new Producto {
@@ -439,7 +439,7 @@ var productos = new List<Producto>
             stock=60,
             fechaVencimiento="2029-03-10",
             descuento=10,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Atorvastatin_20mg_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Atorvastatin40mg.jpg",
             descripcion="Estatina utilizada para ayudar a controlar determinados niveles de colesterol."
         },
         new Producto {
@@ -455,7 +455,7 @@ var productos = new List<Producto>
             stock=45,
             fechaVencimiento="2029-04-20",
             descuento=10,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Rosuvastatin_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Crestor_Tablets_(rosuvastatin).jpg",
             descripcion="Medicamento empleado para controlar determinados niveles elevados de colesterol."
         },
         new Producto {
@@ -471,7 +471,7 @@ var productos = new List<Producto>
             stock=100,
             fechaVencimiento="2028-09-15",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Metformin_500mg_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Metformin_500mg_Tablets.jpg",
             descripcion="Antidiabético oral utilizado en el manejo de la diabetes mellitus tipo 2."
         },
         new Producto {
@@ -520,7 +520,7 @@ var productos = new List<Producto>
             stock=50,
             fechaVencimiento="2028-12-15",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Salbutamol_inhaler.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Salbutamol2.JPG",
             descripcion="Broncodilatador inhalado utilizado para aliviar determinados episodios de broncoespasmo."
         },
         new Producto {
@@ -536,7 +536,7 @@ var productos = new List<Producto>
             stock=30,
             fechaVencimiento="2029-01-25",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Budesonide_inhaler.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Easyhaler_Budesonid_inhaler.jpg",
             descripcion="Corticosteroide inhalado utilizado para controlar la inflamación de las vías respiratorias."
         },
         new Producto {
@@ -552,7 +552,7 @@ var productos = new List<Producto>
             stock=55,
             fechaVencimiento="2028-10-10",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ambroxol.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ambroxol-HCl_substance_photo.jpg",
             descripcion="Mucolítico utilizado para facilitar la eliminación de secreciones respiratorias."
         },
         new Producto {
@@ -568,7 +568,7 @@ var productos = new List<Producto>
             stock=40,
             fechaVencimiento="2028-11-19",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Acetylcysteine.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Acetylcystein_as_effervescent_tablet_branded_ACC_by_Sandoz.jpg",
             descripcion="Mucolítico utilizado para disminuir la viscosidad de las secreciones respiratorias."
         },
         new Producto {
@@ -600,7 +600,7 @@ var productos = new List<Producto>
             stock=70,
             fechaVencimiento="2028-09-16",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Clotrimazole_cream.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Clotrimazole.png",
             descripcion="Antifúngico tópico utilizado para determinadas infecciones causadas por hongos."
         },
         new Producto {
@@ -648,7 +648,7 @@ var productos = new List<Producto>
             stock=35,
             fechaVencimiento="2028-08-30",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Aciclovir_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Acyclovir_pills.jpg",
             descripcion="Antiviral utilizado para determinadas infecciones producidas por herpesvirus."
         },
         new Producto {
@@ -664,7 +664,7 @@ var productos = new List<Producto>
             stock=55,
             fechaVencimiento="2028-07-18",
             descuento=0,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hydrocortisone_cream.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tube_of_hydrocortisone_cream.jpg",
             descripcion="Corticosteroide tópico utilizado para disminuir determinadas reacciones inflamatorias."
         },
 
@@ -681,7 +681,7 @@ var productos = new List<Producto>
             stock=50,
             fechaVencimiento="2028-11-11",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Prednisone_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Prednisone_20mg_(TL_175)_corticosteroid_medication_pills_(55006378950).jpg",
             descripcion="Corticosteroide sistémico utilizado en diferentes procesos inflamatorios."
         },
         new Producto {
@@ -713,7 +713,7 @@ var productos = new List<Producto>
             stock=55,
             fechaVencimiento="2029-04-18",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Levothyroxine_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Levothyroxine_25mcg_Tablets.jpg",
             descripcion="Hormona tiroidea sintética utilizada en el tratamiento del hipotiroidismo."
         },
         new Producto {
@@ -729,7 +729,7 @@ var productos = new List<Producto>
             stock=120,
             fechaVencimiento="2029-05-25",
             descuento=5,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Folic_acid_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Фолиевая_кислота_в_таблетках.jpg",
             descripcion="Vitamina B9 utilizada como suplemento nutricional."
         },
         new Producto {
@@ -745,7 +745,7 @@ var productos = new List<Producto>
             stock=100,
             fechaVencimiento="2029-06-20",
             descuento=10,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Vitamin_C_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Vitamin_C_Tablets.jpg",
             descripcion="Suplemento utilizado como fuente de vitamina C."
         },
         new Producto {
@@ -793,7 +793,7 @@ var productos = new List<Producto>
             stock=80,
             fechaVencimiento="2029-02-10",
             descuento=0,
-            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrous_sulfate_tablets.jpg",
+            imagen="https://commons.wikimedia.org/wiki/Special:Redirect/file/RECALLED_–_Ferrous_Sulfate_Tablets,_325_mg_(8391322734).jpg",
             descripcion="Suplemento de hierro utilizado para determinadas deficiencias de hierro."
         },
         new Producto {
