@@ -830,6 +830,102 @@ var productos = new List<Producto>
         }
     };
 
+var categorias = new List<Categoria>
+{
+    new Categoria { id = 1, nombre = "Analgésico", descripcion = "Medicamentos utilizados para aliviar el dolor." },
+
+    new Categoria { id = 2, nombre = "Antibiótico", descripcion = "Medicamentos utilizados para tratar infecciones bacterianas." },
+
+    new Categoria { id = 3, nombre = "Antidiabético", descripcion = "Medicamentos utilizados para el control de la diabetes." },
+
+    new Categoria { id = 4, nombre = "Antidiarreico", descripcion = "Medicamentos utilizados para el tratamiento de la diarrea." },
+
+    new Categoria { id = 5, nombre = "Antiemético", descripcion = "Medicamentos utilizados para prevenir o controlar las náuseas y vómitos." },
+
+    new Categoria { id = 6, nombre = "Antifúngico", descripcion = "Medicamentos utilizados para tratar infecciones causadas por hongos." },
+
+    new Categoria { id = 7, nombre = "Antihipertensivo", descripcion = "Medicamentos utilizados para ayudar a controlar la presión arterial." },
+
+    new Categoria { id = 8, nombre = "Antihistamínico", descripcion = "Medicamentos utilizados para aliviar síntomas relacionados con alergias." },
+
+    new Categoria { id = 9, nombre = "Antiinflamatorio", descripcion = "Medicamentos utilizados para reducir la inflamación y aliviar el dolor." },
+
+    new Categoria { id = 10, nombre = "Antitusivo", descripcion = "Medicamentos utilizados para aliviar o controlar la tos." },
+
+    new Categoria { id = 11, nombre = "Antiviral", descripcion = "Medicamentos utilizados para el tratamiento de determinadas infecciones virales." },
+
+    new Categoria { id = 12, nombre = "Cardiovascular", descripcion = "Medicamentos relacionados con el tratamiento y cuidado del sistema cardiovascular." },
+
+    new Categoria { id = 13, nombre = "Corticoide", descripcion = "Medicamentos utilizados en distintos procesos inflamatorios y otras condiciones médicas." },
+
+    new Categoria { id = 14, nombre = "Gastrointestinal", descripcion = "Medicamentos destinados al tratamiento de diferentes trastornos del sistema digestivo." },
+
+    new Categoria { id = 15, nombre = "Hipolipemiante", descripcion = "Medicamentos utilizados para ayudar a controlar los niveles de lípidos en la sangre." },
+
+    new Categoria { id = 16, nombre = "Hormonal", descripcion = "Medicamentos relacionados con tratamientos hormonales." },
+
+    new Categoria { id = 17, nombre = "Mucolítico", descripcion = "Medicamentos utilizados para facilitar la eliminación de secreciones respiratorias." },
+
+    new Categoria { id = 18, nombre = "Respiratorio", descripcion = "Medicamentos destinados al tratamiento de diferentes afecciones respiratorias." },
+
+    new Categoria { id = 19, nombre = "Suplemento", descripcion = "Productos utilizados para complementar la alimentación y el aporte de determinados nutrientes." },
+
+    new Categoria { id = 20, nombre = "Vitamina", descripcion = "Productos destinados a complementar el aporte de vitaminas al organismo." }
+};
+
+var laboratorios = new List<Laboratorio>
+{
+    new Laboratorio { id = 1, nombre = "Abbott" },
+    new Laboratorio { id = 2, nombre = "Actavis" },
+    new Laboratorio { id = 3, nombre = "AstraZeneca" },
+    new Laboratorio { id = 4, nombre = "Bayer" },
+    new Laboratorio { id = 5, nombre = "Boehringer Ingelheim" },
+    new Laboratorio { id = 6, nombre = "GSK" },
+    new Laboratorio { id = 7, nombre = "Genfar" },
+    new Laboratorio { id = 8, nombre = "Janssen" },
+    new Laboratorio { id = 9, nombre = "MSD" },
+    new Laboratorio { id = 10, nombre = "Medifarma" },
+    new Laboratorio { id = 11, nombre = "Merck" },
+    new Laboratorio { id = 12, nombre = "Nature Made" },
+    new Laboratorio { id = 13, nombre = "Novartis" },
+    new Laboratorio { id = 14, nombre = "Pfizer" },
+    new Laboratorio { id = 15, nombre = "Roche" },
+    new Laboratorio { id = 16, nombre = "Sandoz" },
+    new Laboratorio { id = 17, nombre = "Sanofi" },
+    new Laboratorio { id = 18, nombre = "Takeda" },
+    new Laboratorio { id = 19, nombre = "UCB" },
+    new Laboratorio { id = 20, nombre = "Zambon" }
+};
+
+var promociones = new List<Promocion>
+{
+    new Promocion
+    {
+        id = 1,
+        nombre = "Descuento del 10%",
+        descripcion = "Promoción en medicamentos seleccionados.",
+        descuento = 10,
+        activa = true
+    },
+    new Promocion
+    {
+        id = 2,
+        nombre = "Descuento del 5%",
+        descripcion = "Descuento especial en productos seleccionados.",
+        descuento = 5,
+        activa = true
+    },
+    new Promocion
+    {
+        id = 3,
+        nombre = "Campaña de salud",
+        descripcion = "Promoción especial disponible por tiempo limitado.",
+        descuento = 15,
+        activa = true
+    }
+};
+
+
 app.MapGet("/api/farmacia", () =>
 {
     return Results.Ok(productos);
@@ -890,6 +986,65 @@ app.MapDelete("/api/farmacia/{id}", (int id) =>
     productos.Remove(producto);
 
     return Results.NoContent();
+});
+
+// =============================
+// CATEGORIAS
+// =============================
+
+app.MapGet("/api/categorias", () =>
+{
+    return Results.Ok(categorias);
+});
+
+app.MapGet("/api/categorias/{id}", (int id) =>
+{
+    var categoria = categorias.FirstOrDefault(c => c.id == id);
+
+    if (categoria == null)
+        return Results.NotFound(new { mensaje = "Categoría no encontrada" });
+
+    return Results.Ok(categoria);
+});
+
+
+// =============================
+// LABORATORIOS
+// =============================
+
+app.MapGet("/api/laboratorios", () =>
+{
+    return Results.Ok(laboratorios);
+});
+
+app.MapGet("/api/laboratorios/{id}", (int id) =>
+{
+    var laboratorio = laboratorios.FirstOrDefault(l => l.id == id);
+
+    if (laboratorio == null)
+        return Results.NotFound(new { mensaje = "Laboratorio no encontrado" });
+
+    return Results.Ok(laboratorio);
+});
+
+
+// =============================
+// PROMOCIONES
+// =============================
+
+app.MapGet("/api/promociones", () =>
+{
+    return Results.Ok(promociones);
+});
+
+app.MapGet("/api/promociones/{id}", (int id) =>
+{
+    var promocion = promociones.FirstOrDefault(p => p.id == id);
+
+    if (promocion == null)
+        return Results.NotFound(new { mensaje = "Promoción no encontrada" });
+
+    return Results.Ok(promocion);
 });
 
 var port = Environment.GetEnvironmentVariable("Port")??"10000";
