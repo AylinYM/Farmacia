@@ -1007,6 +1007,32 @@ app.MapGet("/api/categorias/{id}", (int id) =>
     return Results.Ok(categoria);
 });
 
+app.MapPost("/api/categorias", (Categoria categoria) =>
+{
+    categoria.id = categorias.Count == 0 ? 1 : categorias.Max(c => c.id) + 1;
+    categorias.Add(categoria);
+    return Results.Created($"/api/categorias/{categoria.id}", categoria);
+});
+
+app.MapPut("/api/categorias/{id}", (int id, Categoria actualizada) =>
+{
+    var categoria = categorias.FirstOrDefault(c => c.id == id);
+    if (categoria == null) return Results.NotFound(new { mensaje = "Categoría no encontrada" });
+
+    categoria.nombre = actualizada.nombre;
+    categoria.descripcion = actualizada.descripcion;
+
+    return Results.Ok(categoria);
+});
+
+app.MapDelete("/api/categorias/{id}", (int id) =>
+{
+    var categoria = categorias.FirstOrDefault(c => c.id == id);
+    if (categoria == null) return Results.NotFound(new { mensaje = "Categoría no encontrada" });
+
+    categorias.Remove(categoria);
+    return Results.NoContent();
+});
 
 // =============================
 // LABORATORIOS
@@ -1027,6 +1053,31 @@ app.MapGet("/api/laboratorios/{id}", (int id) =>
     return Results.Ok(laboratorio);
 });
 
+app.MapPost("/api/laboratorios", (Laboratorio laboratorio) =>
+{
+    laboratorio.id = laboratorios.Count == 0 ? 1 : laboratorios.Max(l => l.id) + 1;
+    laboratorios.Add(laboratorio);
+    return Results.Created($"/api/laboratorios/{laboratorio.id}", laboratorio);
+});
+
+app.MapPut("/api/laboratorios/{id}", (int id, Laboratorio actualizado) =>
+{
+    var laboratorio = laboratorios.FirstOrDefault(l => l.id == id);
+    if (laboratorio == null) return Results.NotFound(new { mensaje = "Laboratorio no encontrado" });
+
+    laboratorio.nombre = actualizado.nombre;
+
+    return Results.Ok(laboratorio);
+});
+
+app.MapDelete("/api/laboratorios/{id}", (int id) =>
+{
+    var laboratorio = laboratorios.FirstOrDefault(l => l.id == id);
+    if (laboratorio == null) return Results.NotFound(new { mensaje = "Laboratorio no encontrado" });
+
+    laboratorios.Remove(laboratorio);
+    return Results.NoContent();
+});
 
 // =============================
 // PROMOCIONES
@@ -1046,6 +1097,35 @@ app.MapGet("/api/promociones/{id}", (int id) =>
 
     return Results.Ok(promocion);
 });
+
+app.MapPost("/api/promociones", (Promocion promocion) =>
+{
+    promocion.id = promociones.Count == 0 ? 1 : promociones.Max(p => p.id) + 1;
+    promociones.Add(promocion);
+    return Results.Created($"/api/promociones/{promocion.id}", promocion);
+});
+
+app.MapPut("/api/promociones/{id}", (int id, Promocion actualizada) =>
+{
+    var promocion = promociones.FirstOrDefault(p => p.id == id);
+    if (promocion == null) return Results.NotFound(new { mensaje = "Promoción no encontrada" });
+
+    promocion.nombre = actualizada.nombre;
+    promocion.descripcion = actualizada.descripcion;
+    promocion.descuento = actualizada.descuento;
+    promocion.activa = actualizada.activa;
+
+    return Results.Ok(promocion);
+});
+
+app.MapDelete("/api/promociones/{id}", (int id) =>
+{
+    var promocion = promociones.FirstOrDefault(p => p.id == id);
+    if (promocion == null) return Results.NotFound(new { mensaje = "Promoción no encontrada" });
+
+    promociones.Remove(promocion);
+    return Results.NoContent();
+}); 
 
 var port = Environment.GetEnvironmentVariable("Port")??"10000";
 app.Run($"http://0.0.0.0:(port)");
